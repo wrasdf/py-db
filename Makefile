@@ -1,10 +1,13 @@
-.PHONY: mysql postgres clean
+.PHONY: mysql postgres clean tests
 
 mysql:
 	cd mysql && docker-compose up
 
 postgres:
 	cd postgres && docker-compose up
+
+tests:
+	cd tests && make run
 
 clean:
 	docker stop $$(docker ps -aq)
