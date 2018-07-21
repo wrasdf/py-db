@@ -36,6 +36,7 @@ ALTER TABLE zipkin_annotations ADD INDEX(endpoint_service_name) COMMENT 'for get
 ALTER TABLE zipkin_annotations ADD INDEX(a_type) COMMENT 'for getTraces';
 ALTER TABLE zipkin_annotations ADD INDEX(a_key) COMMENT 'for getTraces';
 ALTER TABLE zipkin_annotations ADD INDEX(trace_id, span_id, a_key) COMMENT 'for dependencies job';
+ALTER TABLE zipkin_annotations ADD INDEX(a_timestamp) COMMENT 'for clean job';
 
 CREATE TABLE IF NOT EXISTS zipkin_dependencies (
   day DATE NOT NULL,
